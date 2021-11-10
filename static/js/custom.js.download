@@ -1,0 +1,1308 @@
+$(document).ready(function ($) {
+    $('.loop').owlCarousel({
+        items: 3,
+        loop: true,
+        margin: 10,
+        slideSpeed: 4000,
+        responsiveClass: true,
+        responsive: {
+            0: {
+                items: 1,
+                nav: true
+            },
+            600: {
+                items: 2,
+                nav: false
+            },
+            1000: {
+                items: 3,
+                nav: true,
+                loop: false,
+                margin: 20
+            }
+        }
+    });
+    $('.nonloop').owlCarousel({
+        center: true,
+        items: 3,
+        loop: false,
+        margin: 10,
+        responsive: {
+            600: {
+                items: 3
+            }
+        }
+    });
+    $('.destination_bg-slider-slides').owlCarousel({
+        loop: true,
+        margin: 20,
+        autoplay: true,
+        dots: true,
+        nav: true,
+        responsiveClass: true,
+        responsive: {
+            0: {
+                items: 1,
+                nav: false
+            },
+            600: {
+                items: 2,
+                nav: false
+            },
+            1000: {
+                items: 3,
+                nav: true,
+                loop: true
+            }
+        }
+    });
+
+
+
+    $('.destination_bg-slider-slides1').owlCarousel({
+        loop: true,
+        margin: 30,
+        autoplay: true,
+        dots: true,
+        nav: true,
+        responsiveClass: true,
+        responsive: {
+            0: {
+                items: 1,
+                nav: false
+            },
+            600: {
+                items: 3,
+                nav: false
+            },
+            1000: {
+                items: 5,
+                nav: true,
+                loop: true
+            }
+        }
+    });
+
+
+    $('.destination_bg-slider-slides2').owlCarousel({
+        loop: true,
+        margin: 30,
+        autoplay: false,
+        dots: true,
+        nav: true,
+        responsiveClass: true,
+        responsive: {
+            0: {
+                items: 1,
+                nav: false
+            },
+            600: {
+                items: 2,
+                nav: false
+            },
+            1000: {
+                items: 4,
+                nav: true,
+                loop: true
+            }
+        }
+    });
+});
+$(document).ready(function () {
+    var owl = $('.owl-carousel');
+    owl.owlCarousel({
+        items: 1,
+        loop: true,
+        nav: true,
+        margin: 10,
+        autoplay: true,
+        autoplayTimeout: 3000,
+        autoplayHoverPause: true
+    });
+    $('.play').on('click', function () {
+        owl.trigger('play.owl.autoplay', [1000])
+    })
+    $('.stop').on('click', function () {
+        owl.trigger('stop.owl.autoplay')
+    })
+})
+$(document).ready(function () {
+    $('.loop').owlCarousel({
+        loop: true,
+        margin: 10,
+        responsiveClass: true,
+        responsive: {
+            0: {
+                items: 1,
+                nav: true
+            },
+            600: {
+                items: 2,
+                nav: false
+            },
+            1000: {
+                items: 3,
+                nav: true,
+                loop: false,
+                margin: 20
+            }
+        }
+    })
+})
+var btt = document.getElementById('back-to-top'),
+        body = document.body,
+        docElem = document.documentElement,
+        offset = 100,
+        scrollPos;
+
+window.addEventListener('scroll', function (event) {
+    scrollPos = body.scrollTop || docElem.scrollTop;
+
+    btt.className = (scrollPos > offset) ? 'visible' : '';
+});
+
+$("#back-to-top").click(function () {
+    $("html, body").animate({scrollTop: 0}, 1000);
+});
+
+$(".filter-icon").click(function () {
+    $(".filter-sec").show();
+});
+
+$(".cancel-btn").click(function () {
+    $(".filter-sec").hide();
+});
+
+$(".carsearch-mb-btn").click(function () {
+    $("#car-search-mb").show();
+});
+$("#car-search-cancel").click(function () {
+    $("#car-search-mb").hide();
+});
+
+
+
+$(".carsort-mb-btn").click(function () {
+    $(".car-sortingby").show();
+});
+$(".car-sort-cancel").click(function () {
+    $(".car-sortingby").hide();
+});
+
+
+
+$(window).scroll(function () {
+    var sticky = $('.sticky'),
+            scroll = $(window).scrollTop();
+
+    if (scroll >= 500)
+        sticky.addClass('fixed');
+    else
+        sticky.removeClass('fixed');
+});
+
+$(function () {
+    $(".tab-btns li, .view-detail-modal li, .home-tab-btns li, .filter-group-items").on("click", function (e) { // See here, i have our selector set to "li", so this jQuery object will grab all li tags on the page
+        $(this).addClass("active").siblings().removeClass("active");
+    });
+})
+
+
+
+$(function () {
+    $(".sortitem1, .sortitem3, .busfare, .bus-details-tab, .bus_tab_details-box-checked").on("click", function (e) {
+        $(this).addClass("active").siblings().removeClass("active");
+    });
+})
+
+$(document).ready(function () {
+    $("#hotel_travller_search, #travller_search").on("click", function () {
+        $(".room_boxcls").toggle()
+    });
+
+});
+
+$(function () {
+
+    $("#StartDateBus").datepicker({
+        altField: '#hdnStartDateBus',
+        altFormat: "yy-mm-dd",
+        numberOfMonths: 2,
+        showButtonPanel: true,
+        buttonImage: "https://jqueryui.com/resources/demos/datepicker/images/calendar.gif",
+        buttonImageOnly: true,
+        dateFormat: 'dd-M-yy',
+        autoclose: true,
+        disableTouchKeyboard: true,
+        Readonly: true
+    }).attr('readonly', 'readonly');
+
+    $("#datepicker, #datepicker_return, #StartDate, #Start_DOB, #Start-Date, #Start_Date," +
+            " #enquiry-dob, #Departure-Date, #Departure_dob, #enquire_date-list, #leave-date, #dt-enquire_date," +
+            "#car-Start_Date, #car-end-Date, #local-Start_Date, #local-end-Date, #tranfer-Start_Date, #tranfer-end-Date," +
+            "#departure_text, #return-text, #changehotel1, #visadate, #hotel-checkin-id, #hotel-checkout-id").datepicker({
+        numberOfMonths: 2,
+        showButtonPanel: true,
+        buttonImage: "https://jqueryui.com/resources/demos/datepicker/images/calendar.gif",
+        buttonImageOnly: true,
+        dateFormat: 'dd-M-yy',
+        autoclose: true,
+        disableTouchKeyboard: true,
+        Readonly: true
+    }).attr('readonly', 'readonly');
+    $("#travelerDatePickerdetail,#e-travel_date").datepicker({
+        minDate: 0,
+        numberOfMonths: 2,
+        showButtonPanel: true,
+        buttonImage: "https://jqueryui.com/resources/demos/datepicker/images/calendar.gif",
+        buttonImageOnly: true,
+        dateFormat: 'dd/mm/yy',
+        autoclose: true,
+        disableTouchKeyboard: true,
+        Readonly: true
+    }).attr('readonly', 'readonly');
+});
+
+
+function submitVisaSearchForm() {
+    var visaSearchFormVal = $('#visaSearchForm').val();
+    var put_select_destination = $('#put_select_destination').val();
+    if (put_select_destination == '') {
+        $('.select2-selection--single').addClass('select2-selection select2-selection--single visa-search-error');
+
+        $(".shakeThisDiv").effect("shake");
+        return false;
+    }
+    window.location.href = 'visa/' + getSeoName1(put_select_destination).toLowerCase() + '-visa.html';
+}
+function getvisaSearchValue(that) {
+    var des = $(that).val();
+    $('#put_select_destination').val(des);
+}
+
+
+$(window).scroll(function () {
+    var sticky = $('.sticky-form'),
+            scroll = $(window).scrollTop();
+
+    if (scroll >= 500)
+        sticky.addClass('fixed');
+    else
+        sticky.removeClass('fixed');
+});
+
+
+// $(function() {
+//     $('#car-select').change(function(){
+//         $('.car-main').hide();
+//         $('#' + $(this).val()).show();
+//     });
+// });
+
+
+ // hotel filter 
+
+$(document).ready(function () {
+    
+
+$(".hotelsort").click(function() {
+    $(".hotelsortlisting").show();
+});
+$(".cancel-btn-mb-sort").click(function() {
+    $(".hotelsortlisting").hide();
+});
+
+
+$(".hotel-mb-search").click(function() {
+    $(".mobile-hotel-search-form").show();
+});
+$(".cancel-btn").click(function() {
+    $(".mobile-hotel-search-form").hide();
+});
+
+});
+
+// 11th may ends 
+
+$(function () {
+    $('.advanceDetail1').hover(function () {
+        $('.advanceDetailsBox1').toggle();
+    });
+});
+
+$(function () {
+    $('.advanceDetail2').hover(function () {
+        $('.advanceDetailsBox2').toggle();
+    });
+});
+
+$(function () {
+    $('.advanceDetail3').hover(function () {
+        $('.advanceDetailsBox3').toggle();
+    });
+});
+
+$(function () {
+    $('.advanceDetail4').hover(function () {
+        $('.advanceDetailsBox4').toggle();
+    });
+});
+$(function () {
+    $('.fareDetails1').hover(function () {
+        $('.fareDetailsbox1').toggle();
+    });
+});
+$(function () {
+    $('.fareDetails2').hover(function () {
+        $('.fareDetailsbox2').toggle();
+    });
+});
+
+$(function () {
+    $('.fareDetails3').hover(function () {
+        $('.fareDetailsbox3').toggle();
+    });
+});
+
+$(function () {
+    $('.fareDetails4').hover(function () {
+        $('.fareDetailsbox4').toggle();
+    });
+});
+$(document).on("click", '[data-toggle="lightbox"]', function (event) {
+    event.preventDefault();
+    $(this).ekkoLightbox();
+});
+
+$(document).ready(function () {
+    $(".bus-b-p-list").click(function () {
+        $(".bus-b-p-list").removeClass("active");
+        if ($(this).find('a').hasClass('active')) {
+            $(this).find('a').removeClass('active');
+            $($(this).find('a').attr('href')).removeClass('active');
+            return false;
+        } else {
+            $(this).addClass("active");
+        }
+    });
+});
+
+
+$(document).ready(function () {
+    $(".bus_tab_details-box-checked").click(function () {
+
+        $(this).find('input').prop('checked', true)
+    });
+});
+
+$(document).ready(function () {
+    $(".fare-toggle-btn").click(function () {
+        $(".fare-container").css("display", "block");
+        $("h3").text("Hide Fare Details");
+    });
+});
+$(document).ready(function () {
+    $(".bus_tab_details-box-checked").click(function () {
+        $("#viewdetails-box").show();
+    });
+});
+
+
+$(function () {
+    $(".list2-radio li").on("click", function (e) {
+        $(".list2-radio li a").addClass("active").removeClass("active");
+    });
+})
+
+
+$(function () {
+    $("li.seat.available").on("click", function (e) {
+        $(this).addClass(".seat-filled");
+    });
+})
+
+$('.fa-angle-up').on('click', function () {
+    $(this).toggleClass('fa-angle-down fa-angle-up');
+});
+
+
+$('.fare_information_dropdown .fa-angle-up').on('click', function () {
+    $(this).toggleClass('fa-angle-up fa-angle-down');
+});
+
+
+//
+//
+//document.addEventListener('keydown', function (e) {
+//    if (e.ctrlKey && e.keyCode === 85) { e.preventDefault(); return false; } else if (e.keyCode === 123) { e.preventDefault(); return false; }
+//});
+//
+//function disableRightClick() {
+//    return false;
+//}
+//
+//document.addEventListener('contextmenu', function (e) {
+//    e.preventDefault();
+//});
+
+///*Disable Right click  ends*/
+
+$('#gstinput').on('click', function () {
+    $("#gst-box").toggle()
+});
+
+$('.carsearch-mb-btn').on('click', function () {
+    $("#car-search-mb").show()
+});
+
+$('.carfilter-mb-btn').on('click', function () {
+    $("#filtercar").toggle()
+});
+
+
+//International flight search starts
+
+
+$('#roundtrip-icon1').on('click', function () {
+    $("#roundtrip1").toggle()
+});
+
+$('#up-down-icon').on('click', function () {
+    $("#flightcollapse-1").toggle()
+});
+
+
+$('#roundtrip-icon2').on('click', function () {
+    $("#roundtrip2").toggle()
+});
+
+
+// $('.multicity_form_boxshow .fa-chevron-circle-down').on('click', function() {
+//     $(this).toggleClass('fa-chevron-circle-up fa-chevron-circle-down');
+// });
+
+
+//12-10-2020
+$('.flight-filter').on('click', function () {
+    $("#flight-filter").show()
+});
+
+$('.cancel-btn-flight').on('click', function () {
+    $("#flight-filter").hide()
+});
+
+
+$('.flight-filter').on('click', function () {
+    $("#flight-filter-sec").show()
+});
+
+$('.cancel-btn-flight').on('click', function () {
+    $("#flight-filter-sec").hide()
+});
+
+$('.flight-sort').on('click', function () {
+    $(".sortlisting-flight").show()
+});
+
+$('.cancel-btn-mb-sort').on('click', function () {
+    $(".sortlisting-flight").hide()
+});
+
+$('.flight-sort').on('click', function () {
+    $(".sortlisting-flight-round").show()
+});
+
+$('.cancel-btn-mb-sort').on('click', function () {
+    $(".sortlisting-flight-round").hide()
+});
+
+$('.flight-modify').on('click', function () {
+    $(".internation-flight-search-Banner .srch_form").show()
+});
+
+$('.in-flight-srch').on('click', function () {
+    $("#m-showsearch-fligth").show()
+});
+$('.internation-flight-search-Banner .cancel-btn').on('click', function () {
+    $(".internation-flight-search-Banner .srch_form").toggle();
+    $(".internation-flight-search-Banner .srch_form").animate({
+        display: "block",
+        transition: "opacity .15s linear"
+    }, 1500);
+});
+
+
+
+
+
+
+//International flight search starts
+
+
+
+// Loader starts
+
+window.onload = function ()
+{
+    $('.loader').fadeOut();
+}
+
+
+$(function () {
+    $(".view_deatils_wrapper .nav-tabs li, .visa-listing li").on("click", function (e) {
+        $(this).addClass("active").siblings().removeClass("active");
+    });
+})
+
+
+
+//Domestic tour packages load more
+
+$('.bpdp-change').on('click', function () {
+    $(".view-seats-details").show();
+    $("#viewdetails-box").hide();
+});
+
+$("input").attr("autocomplete", "off");
+
+
+
+
+
+$(document).ready(function () {
+    $(".visa-listing li").click(function () {
+        $(".visacommon").removeClass("plus_height");
+        if ($(this).find('.visacommon').hasClass('plus_height')) {
+            $(this).find('.visacommon').removeClass('plus_height');
+        } else {
+            $(".visacommon").addClass("plus_height");
+        }
+    });
+});
+
+$(function () {
+    $(".navbar-collapse ul li").on("click", function (e) {
+        $(".navbar-collapse  ul li a").addClass("active");
+    });
+})
+
+
+
+$(document).ready(function () {
+    $(".profiletab-list").click(function () {
+        $(".profiletab-list").removeClass("active");
+        if ($(this).find('a').hasClass('active')) {
+            $(this).find('a').removeClass('active');
+            $($(this).find('a').attr('href')).removeClass('active');
+            //return false;
+        } else {
+            $(this).addClass("active");
+        }
+    });
+});
+
+
+$('.flight-filter').on('click', function () {
+    $(".internation-flight-search-Banner .srch_form, .sortlisting-flight").hide();
+});
+
+$('.flight-modify').on('click', function () {
+    $("#flight-filter, .sortlisting-flight").hide();
+});
+$('.flight-sort').on('click', function () {
+    $(".internation-flight-search-Banner .srch_form, #flight-filter").hide();
+});
+
+
+
+$(document).ready(function () {
+    $(".mobile_footer_bottomcontinuefixed a").click(function () {
+        $(".mobile_footer_bottomcontinuefixed a").removeClass("active");
+        if ($(this).find('a').hasClass('active')) {
+            $(this).find('a').removeClass('active');
+        } else {
+            $(this).addClass("active");
+        }
+    });
+});
+
+$(document).ready(function () {
+    $(".view_deatils_wrapper .nav-tabs li a").click(function () {
+        $(".view_deatils_wrapper .nav-tabs li a").removeClass("active");
+        if ($(this).find('a').hasClass('active')) {
+            $(this).find('a').removeClass('active');
+        } else {
+            $(this).addClass("active");
+        }
+    });
+});
+
+$(document).ready(function () {
+    $(function () {
+        $(".view_deatils_wrapper .nav-tabs li a ").on("click", function (e) {
+            $(".removeclas").hide();
+            $($(this).attr('href')).show();
+
+        });
+    })
+});
+
+
+
+$(document).ready(function () {
+    $(".tab-btns .tab-list a").click(function () {
+        $("html, body").animate({scrollTop: 500});
+    });
+
+});
+
+$(document).ready(function () {
+    function closebox() {
+        $('.room_boxcls').hide();
+    }
+
+});
+
+$(document).ready(function () {
+    $(function () {
+        $("#dateofbirth-1").datepicker({
+            Readonly: true
+        }).attr('readonly', 'readonly');
+    });
+});
+
+
+$(document).ready(function () {
+    $(".addroom").click(function () {
+        $(".form_input_spac").focus();
+    });
+});
+
+
+
+
+
+$(document).ready(function () {
+    $(".car-modify").click(function () {
+        $(".carlistingBanner").toggle();
+    });
+
+    $(".cancel-btn").click(function () {
+        $(".carlistingBanner").hide();
+    });
+
+
+    $(".car-filter").click(function () {
+        $("#filtercar").toggle();
+    });
+
+    $(".cancel-btn").click(function () {
+        $("#filtercar").hide();
+    });
+
+
+    $(".car-sort").click(function () {
+        $(".sortlisting-flight").toggle();
+    });
+
+    $(".cancel-btn").click(function () {
+        $(".sortlisting-flight").hide();
+    });
+
+});
+
+
+
+//multi-select start
+
+
+$(function () {
+    $('#people').multiSelect();
+    $('#ice-cream').multiSelect();
+    $('#line-wrap-example').multiSelect({
+        positionMenuWithin: $('.position-menu-within')
+    });
+    $('#categories').multiSelect({
+        noneText: 'All categories',
+        presets: [
+            {
+                name: 'All categories',
+                options: []
+            },
+            {
+                name: 'My categories',
+                options: ['a', 'c']
+            }
+        ]
+    });
+    $('#modal-example').multiSelect({
+        'modalHTML': '<div class="multi-select-modal">'
+    });
+});
+
+
+//multi-select ends
+
+
+//select room start
+
+$(document).ready(function () {
+    $(".selectroom-flip").click(function () {
+        $(".selectroom-panel").show();
+    });
+});
+
+
+
+
+
+$('#myCarousel').carousel({
+    interval: false
+});
+$('#carousel-thumbs').carousel({
+    interval: false
+});
+
+// handles the carousel thumbnails
+// https://stackoverflow.com/questions/25752187/bootstrap-carousel-with-thumbnails-multiple-carousel
+$('[id^=carousel-selector-]').click(function () {
+    var id_selector = $(this).attr('id');
+    var id = parseInt(id_selector.substr(id_selector.lastIndexOf('-') + 1));
+    $('#myCarousel').carousel(id);
+});
+// Only display 3 items in nav on mobile.
+if ($(window).width() < 575) {
+    $('#carousel-thumbs .row div:nth-child(4)').each(function () {
+        var rowBoundary = $(this);
+        $('<div class="row mx-0">').insertAfter(rowBoundary.parent()).append(rowBoundary.nextAll().addBack());
+    });
+    $('#carousel-thumbs .carousel-item .row:nth-child(even)').each(function () {
+        var boundary = $(this);
+        $('<div class="carousel-item">').insertAfter(boundary.parent()).append(boundary.nextAll().addBack());
+    });
+}
+// Hide slide arrows if too few items.
+if ($('#carousel-thumbs .carousel-item').length < 2) {
+    $('#carousel-thumbs [class^=carousel-control-]').remove();
+    $('.machine-carousel-container #carousel-thumbs').css('padding', '0 5px');
+}
+// when the carousel slides, auto update
+$('#myCarousel').on('slide.bs.carousel', function (e) {
+    var id = parseInt($(e.relatedTarget).attr('data-slide-number'));
+    $('[id^=carousel-selector-]').removeClass('selected');
+    $('[id=carousel-selector-' + id + ']').addClass('selected');
+});
+// when user swipes, go next or previous
+$('#myCarousel').swipe({
+    fallbackToMouseEvents: true,
+    swipeLeft: function (e) {
+        $('#myCarousel').carousel('next');
+    },
+    swipeRight: function (e) {
+        $('#myCarousel').carousel('prev');
+    },
+    allowPageScroll: 'vertical',
+    preventDefaultEvents: false,
+    threshold: 75
+});
+/*
+ $(document).on('click', '[data-toggle="lightbox"]', function(event) {
+ event.preventDefault();
+ $(this).ekkoLightbox();
+ });
+ */
+
+$('#myCarousel .carousel-item img').on('click', function (e) {
+    var src = $(e.target).attr('data-remote');
+    if (src)
+        $(this).ekkoLightbox();
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// jquery.multi-select.js
+// by mySociety
+// https://github.com/mysociety/jquery-multi-select
+
+;
+(function ($) {
+
+    "use strict";
+
+    var pluginName = "multiSelect",
+            defaults = {
+                'containerHTML': '<div class="multi-select-container">',
+                'menuHTML': '<div class="multi-select-menu">',
+                'buttonHTML': '<span class="multi-select-button">',
+                'menuItemsHTML': '<div class="multi-select-menuitems">',
+                'menuItemHTML': '<label class="multi-select-menuitem">',
+                'presetsHTML': '<div class="multi-select-presets">',
+                'modalHTML': undefined,
+                'menuItemTitleClass': 'multi-select-menuitem--titled',
+                'activeClass': 'multi-select-container--open',
+                'noneText': '-- Select --',
+                'allText': undefined,
+                'presets': undefined,
+                'positionedMenuClass': 'multi-select-container--positioned',
+                'positionMenuWithin': undefined,
+                'viewportBottomGutter': 20,
+                'menuMinHeight': 200
+            };
+
+    /**
+     * @constructor
+     */
+    function MultiSelect(element, options) {
+        this.element = element;
+        this.$element = $(element);
+        this.settings = $.extend({}, defaults, options);
+        this._defaults = defaults;
+        this._name = pluginName;
+        this.init();
+    }
+
+    function arraysAreEqual(array1, array2) {
+        if (array1.length != array2.length) {
+            return false;
+        }
+
+        array1.sort();
+        array2.sort();
+
+        for (var i = 0; i < array1.length; i++) {
+            if (array1[i] !== array2[i]) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    $.extend(MultiSelect.prototype, {
+
+        init: function () {
+            this.checkSuitableInput();
+            this.findLabels();
+            this.constructContainer();
+            this.constructButton();
+            this.constructMenu();
+            this.constructModal();
+
+            this.setUpBodyClickListener();
+            this.setUpLabelsClickListener();
+
+            this.$element.hide();
+        },
+
+        checkSuitableInput: function (text) {
+            if (this.$element.is('select[multiple]') === false) {
+                throw new Error('$.multiSelect only works on <select multiple> elements');
+            }
+        },
+
+        findLabels: function () {
+            this.$labels = $('label[for="' + this.$element.attr('id') + '"]');
+        },
+
+        constructContainer: function () {
+            this.$container = $(this.settings['containerHTML']);
+            this.$element.data('multi-select-container', this.$container);
+            this.$container.insertAfter(this.$element);
+        },
+
+        constructButton: function () {
+            var _this = this;
+            this.$button = $(this.settings['buttonHTML']);
+            this.$button.attr({
+                'role': 'button',
+                'aria-haspopup': 'true',
+                'tabindex': 0,
+                'aria-label': this.$labels.eq(0).text()
+            })
+                    .on('keydown.multiselect', function (e) {
+                        var key = e.which;
+                        var returnKey = 13;
+                        var escapeKey = 27;
+                        var spaceKey = 32;
+                        var downArrow = 40;
+                        if ((key === returnKey) || (key === spaceKey)) {
+                            e.preventDefault();
+                            _this.$button.click();
+                        } else if (key === downArrow) {
+                            e.preventDefault();
+                            _this.menuShow();
+                            var group = _this.$presets || _this.$menuItems;
+                            group.children(":first").focus();
+                        } else if (key === escapeKey) {
+                            _this.menuHide();
+                        }
+                    }).on('click.multiselect', function (e) {
+                _this.menuToggle();
+            })
+                    .appendTo(this.$container);
+
+            this.$element.on('change.multiselect', function () {
+                _this.updateButtonContents();
+            });
+
+            this.updateButtonContents();
+        },
+
+        updateButtonContents: function () {
+            var _this = this;
+            var options = [];
+            var selected = [];
+
+            this.$element.find('option').each(function () {
+                var text = /** @type string */ ($(this).text());
+                options.push(text);
+                if ($(this).is(':selected')) {
+                    selected.push($.trim(text));
+                }
+            });
+
+            this.$button.empty();
+
+            if (selected.length == 0) {
+                this.$button.text(this.settings['noneText']);
+            } else if ((selected.length === options.length) && this.settings['allText']) {
+                this.$button.text(this.settings['allText']);
+            } else {
+                this.$button.text(selected.join(', '));
+            }
+        },
+
+        constructMenu: function () {
+            var _this = this;
+
+            this.$menu = $(this.settings['menuHTML']);
+            this.$menu.attr({
+                'role': 'menu'
+            }).on('keyup.multiselect', function (e) {
+                var key = e.which;
+                var escapeKey = 27;
+                if (key === escapeKey) {
+                    _this.menuHide();
+                    _this.$button.focus();
+                }
+            })
+                    .appendTo(this.$container);
+
+            this.constructMenuItems();
+
+            if (this.settings['presets']) {
+                this.constructPresets();
+            }
+        },
+
+        constructMenuItems: function () {
+            var _this = this;
+
+            this.$menuItems = $(this.settings['menuItemsHTML']);
+            this.$menu.append(this.$menuItems);
+
+            this.$element.on('change.multiselect', function (e, internal) {
+                // Don't need to update the menu items if this
+                // change event was fired by our tickbox handler.
+                if (internal !== true) {
+                    _this.updateMenuItems();
+                }
+            });
+
+            this.updateMenuItems();
+        },
+
+        updateMenuItems: function () {
+            var _this = this;
+            this.$menuItems.empty();
+
+            this.$element.children('optgroup,option').each(function (index, element) {
+                var $item;
+                if (element.nodeName === 'OPTION') {
+                    $item = _this.constructMenuItem($(element), index);
+                    _this.$menuItems.append($item);
+                } else {
+                    _this.constructMenuItemsGroup($(element), index);
+                }
+            });
+        },
+
+        upDown: function (type, e) {
+            var key = e.which;
+            var upArrow = 38;
+            var downArrow = 40;
+
+            if (key === upArrow) {
+                e.preventDefault();
+                var prev = $(e.currentTarget).prev();
+                if (prev.length) {
+                    prev.focus();
+                } else if (this.$presets && type === 'menuitem') {
+                    this.$presets.children(':last').focus();
+                } else {
+                    this.$button.focus();
+                }
+            } else if (key === downArrow) {
+                e.preventDefault();
+                var next = $(e.currentTarget).next();
+                if (next.length || type === 'menuitem') {
+                    next.focus();
+                } else {
+                    this.$menuItems.children(':first').focus();
+                }
+            }
+        },
+
+        constructPresets: function () {
+            var _this = this;
+            this.$presets = $(this.settings['presetsHTML']);
+            this.$menu.prepend(this.$presets);
+
+            $.each(this.settings['presets'], function (i, preset) {
+                var unique_id = _this.$element.attr('name') + '_preset_' + i;
+                var $item = $(_this.settings['menuItemHTML'])
+                        .attr({
+                            'for': unique_id,
+                            'role': 'menuitem'
+                        })
+                        .text(' ' + preset.name)
+                        .on('keydown.multiselect', _this.upDown.bind(_this, 'preset'))
+                        .appendTo(_this.$presets);
+
+                var $input = $('<input>')
+                        .attr({
+                            'type': 'radio',
+                            'name': _this.$element.attr('name') + '_presets',
+                            'id': unique_id
+                        })
+                        .prependTo($item);
+
+                $input.on('change.multiselect', function () {
+                    _this.$element.val(preset.options);
+                    _this.$element.trigger('change');
+                });
+            });
+
+            this.$element.on('change.multiselect', function () {
+                _this.updatePresets();
+            });
+
+            this.updatePresets();
+        },
+
+        updatePresets: function () {
+            var _this = this;
+
+            $.each(this.settings['presets'], function (i, preset) {
+                var unique_id = _this.$element.attr('name') + '_preset_' + i;
+                var $input = _this.$presets.find('#' + unique_id);
+
+                if (arraysAreEqual(preset.options || [], _this.$element.val() || [])) {
+                    $input.prop('checked', true);
+                } else {
+                    $input.prop('checked', false);
+                }
+            });
+        },
+
+        constructMenuItemsGroup: function ($optgroup, optgroup_index) {
+            var _this = this;
+
+            $optgroup.children('option').each(function (option_index, option) {
+                var $item = _this.constructMenuItem($(option), optgroup_index + '_' + option_index);
+                var cls = _this.settings['menuItemTitleClass'];
+                if (option_index !== 0) {
+                    cls += 'sr';
+                }
+                $item.addClass(cls).attr('data-group-title', $optgroup.attr('label'));
+                _this.$menuItems.append($item);
+            });
+        },
+
+        constructMenuItem: function ($option, option_index) {
+            var unique_id = this.$element.attr('name') + '_' + option_index;
+            var $item = $(this.settings['menuItemHTML'])
+                    .attr({
+                        'for': unique_id,
+                        'role': 'menuitem'
+                    })
+                    .on('keydown.multiselect', this.upDown.bind(this, 'menuitem'))
+                    .text(' ' + $option.text());
+
+            var $input = $('<input>')
+                    .attr({
+                        'type': 'checkbox',
+                        'id': unique_id,
+                        'value': $option.val()
+                    })
+                    .prependTo($item);
+
+            if ($option.is(':disabled')) {
+                $input.attr('disabled', 'disabled');
+            }
+            if ($option.is(':selected')) {
+                $input.prop('checked', 'checked');
+            }
+
+            $input.on('change.multiselect', function () {
+                if ($(this).prop('checked')) {
+                    $option.prop('selected', true);
+                } else {
+                    $option.prop('selected', false);
+                }
+
+                // .prop() on its own doesn't generate a change event.
+                // Other plugins might want to do stuff onChange.
+                $option.trigger('change', [true]);
+            });
+
+            return $item;
+        },
+
+        constructModal: function () {
+            var _this = this;
+
+            if (this.settings['modalHTML']) {
+                this.$modal = $(this.settings['modalHTML']);
+                this.$modal.on('click.multiselect', function () {
+                    _this.menuHide();
+                })
+                this.$modal.insertBefore(this.$menu);
+            }
+        },
+
+        setUpBodyClickListener: function () {
+            var _this = this;
+
+            // Hide the $menu when you click outside of it.
+            $('html').on('click.multiselect', function () {
+                _this.menuHide();
+            });
+
+            // Stop click events from inside the $button or $menu from
+            // bubbling up to the body and closing the menu!
+            this.$container.on('click.multiselect', function (e) {
+                e.stopPropagation();
+            });
+        },
+
+        setUpLabelsClickListener: function () {
+            var _this = this;
+            this.$labels.on('click.multiselect', function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+                _this.menuToggle();
+            });
+        },
+
+        menuShow: function () {
+            $('html').trigger('click.multiselect'); // Close any other open menus
+            this.$container.addClass(this.settings['activeClass']);
+
+            if (this.settings['positionMenuWithin'] && this.settings['positionMenuWithin'] instanceof $) {
+                var menuLeftEdge = this.$menu.offset().left + this.$menu.outerWidth();
+                var withinLeftEdge = this.settings['positionMenuWithin'].offset().left +
+                        this.settings['positionMenuWithin'].outerWidth();
+
+                if (menuLeftEdge > withinLeftEdge) {
+                    this.$menu.css('width', (withinLeftEdge - this.$menu.offset().left));
+                    this.$container.addClass(this.settings['positionedMenuClass']);
+                }
+            }
+
+            var menuBottom = this.$menu.offset().top + this.$menu.outerHeight();
+            var viewportBottom = $(window).scrollTop() + $(window).height();
+            if (menuBottom > viewportBottom - this.settings['viewportBottomGutter']) {
+                this.$menu.css({
+                    'maxHeight': Math.max(
+                            viewportBottom - this.settings['viewportBottomGutter'] - this.$menu.offset().top,
+                            this.settings['menuMinHeight']
+                            ),
+                    'overflow': 'scroll'
+                });
+            } else {
+                this.$menu.css({
+                    'maxHeight': '',
+                    'overflow': ''
+                });
+            }
+        },
+
+        menuHide: function () {
+            this.$container.removeClass(this.settings['activeClass']);
+            this.$container.removeClass(this.settings['positionedMenuClass']);
+            this.$menu.css('width', 'auto');
+        },
+
+        menuToggle: function () {
+            if (this.$container.hasClass(this.settings['activeClass'])) {
+                this.menuHide();
+            } else {
+                this.menuShow();
+            }
+        }
+
+    });
+
+    $.fn[ pluginName ] = function (options) {
+        return this.each(function () {
+            if (!$.data(this, "plugin_" + pluginName)) {
+                $.data(this, "plugin_" + pluginName,
+                        new MultiSelect(this, options));
+            }
+        });
+    };
+
+})(jQuery);
+
+
+
+
+$(function () {
+    $('#star').multiSelect();
+    $('#ice-cream').multiSelect();
+    $('#line-wrap-example').multiSelect({
+        positionMenuWithin: $('.position-menu-within')
+    });
+    $('#categories').multiSelect({
+        noneText: 'All categories',
+        presets: [
+            {
+                name: 'All categories',
+                options: []
+            },
+            {
+                name: 'My categories',
+                options: ['a', 'c']
+            }
+        ]
+    });
+    $('#modal-example').multiSelect({
+        'modalHTML': '<div class="multi-select-modal">'
+    });
+});
+
+
+// 11th may start
+
+
+
+$(document).ready(function () {
+    $(".multi-select-button").click(function () {
+        $(".multi-select-menuitem").focus();
+    });
+ });
+

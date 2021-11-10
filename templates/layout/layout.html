@@ -1,0 +1,111 @@
+{% load static %}  
+<html lang="en">
+    <head>
+    <title>Altroz Techsoft</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <div>
+            <div>
+                <nav class="navbar navbar-inverse">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <img src="{% static '/images/'%}ALTROZ.jpg " alt="ALTROZ.jpg" style="height: 8%;width: 90%;">
+                        </div>
+                        <ul class="nav navbar-nav">
+                            <li class="active"><a href="#">DashBoard</a></li>
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Continent</a><span class="caret"></span>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Asia</a></li>
+                                    <li><a href="#">Africa</a></li>
+                                    <li><a href="#">North America</a></li>
+                                    <li><a href="#">South America</a></li>
+                                    <li><a href="#">Antarctica</a></li>
+                                    <li><a href="#">Europe</a></li>
+                                    <li><a href="#">Australia</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Civilian Awards</a><span class="caret"></span>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Bharat Ratna</a></li>
+                                    <li><a href="#">Padma Vibhushan</a></li>
+                                    <li><a href="#">Padma Bhushan</a></li>
+                                    <li><a href="#">Padma Shri</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Nobel Prize</a><span class="caret"></span>
+                                <ul class="dropdown-menu">
+                                    <li><a href="/nobel/literature">Literature</a></li>
+                                    <li><a href="/nobel/peace">Peace Prize</a></li>
+                                    <li><a href="/nobel/physics">Physics</a></li>
+                                    <li><a href="/nobel/medicine">Physiology or Medicine</a></li>
+                                    <li><a href="/nobel/chemistry">Chemistry</a></li>
+                                    <li><a href="/nobel/economic">Economic Sciences</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Gallantry Awards</a><span class="caret"></span>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Param Vir Chakra</a></li>
+                                    <li><a href="#">Ashoka Chakra</a></li>
+                                    <li><a href="#">Mahavir Chakra</a></li>
+                                    <li><a href="#">Kirti Chakra</a></li>
+                                    <li><a href="#">Vir Chakra</a></li>
+                                    <li><a href="#">Shaurya Chakra</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Sports Awards</a><span class="caret"></span>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Maulana Abul Kalam Azad Trophy</a></li>
+                                    <li><a href="#">Arjuna Award</a></li>
+                                    <li><a href="#">Dronacharya Award</a></li>
+                                    <li><a href="#">Major Dhyan Chand Khel Ratna</a></li>
+                                    <li><a href="#">Major Dhyan Chand Award</a></li>
+                                    <li><a href="#">Rashtriya Khel Protsahan Puruskar</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Import/Export</a></li>
+                            <li><a href="#">Reports</a></li>
+                            <li><a href="#">Help</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <div>
+            {% block content %}
+            {% endblock %}
+        </div>
+        <br/>
+        <div class="copyright">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-4 col-md-12 col-sm-12 col-12">
+                  <small class="copyright-txt">© 2020 <strong>Tripee</strong>.All Rights Reserved.</small>
+                </div>
+                <div class="col-lg-4 col-md-12 col-sm-12 col-12">
+                  <small class="copyright-txt cpy-moble" style="font-size:14px;">
+                    Powered by <a href="http://www.hellogtx.com/"><span style="color:#0b74c4;">hello</span><span style="color:#fb5a2d">GTX</span></a>
+                  </small>
+                </div>
+                <div class="col-lg-4 col-md-12 col-sm-12 col-12 text-center">
+                  <ul class="ft-btn-list">
+                    <li> <a class="btn callIcon" href="tel:+919291907328"><i class="fa fa-phone" aria-hidden="true"></i> Call Us</a></li>
+                    <li> <a class="btn enquiry-Icon" data-toggle="modal" data-target="#myModa1Enquiry"><i class="fa fa-file-text-o"></i> Send Enquiry</a></li>
+                    <li><a class="btn wtsapp-icon " href="whatsapp://send?text=Hello&amp;phone=+919291907328"><i class="fa fa-whatsapp" aria-hidden="true"></i>Whatsapp</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+    </body>
+</html>

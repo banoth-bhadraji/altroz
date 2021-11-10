@@ -1,0 +1,638 @@
+{% load static %}  
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Dashboard...</title>
+		<link rel="stylesheet" type="text/css" href="{% static '/css/bootstrap.min.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static '/css/style.css' %}">	
+		<script type="text/javascript" src="{% static '/js/jquery.min.js.download' %}"></script>	
+		<script type="text/javascript" src="{% static '/js/custom.js.download' %}"></script>
+	</head>
+	<body ng-app="Farohar" class="ng-scope">
+		<div id="page">
+			<section class="hot-deals">
+				<section class="search-form-box">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-10 mx-auto">
+								<div class="search-box shadow home-srch">
+									<div class="home-tab-btns">
+										<ul class="nav nav-tabs" role="tablist">
+											<li role="presentation" class="active tab-list" title="Flights">
+												<a href="https://www.tripee.in/#tab2" aria-controls="Daily_Itinerary" role="tab" data-toggle="tab">
+													<i class="fa fa-plane"></i>
+												</a>
+											</li>
+											<li role="presentation" class=" tab-list" title="Tours">
+												<a href="https://www.tripee.in/#tab1" aria-controls="Trip_Overview" role="tab" data-toggle="tab">
+													<i class="fa fa-briefcase" aria-hidden="true"></i>
+												</a>
+											</li>
+											<li role="presentation" class="  tab-list" title="Bus">
+												<a href="https://www.tripee.in/#tab5" aria-controls="Hotel" role="tab" data-toggle="tab">
+													<i class="fa fa-bus" aria-hidden="true"></i>
+												</a>
+											</li>
+											<li role="presentation" class="  tab-list" title="Visa">
+												<a href="https://www.tripee.in/#tab6" aria-controls="Inclusions" role="tab" data-toggle="tab">
+													<i class="fa fa-cc-visa" aria-hidden="true"></i>
+												</a>
+											</li>
+											<li role="presentation" class="  tab-list" title="Car">
+												<a href="https://www.tripee.in/#tab4" aria-controls="Daily_Itinerary" role="tab" data-toggle="tab">
+													<i class="fa fa-car"></i>
+												</a>
+											</li>
+											<li role="presentation" class="  tab-list" title="Hotels">
+												<a href="https://www.tripee.in/#tab3" aria-controls="Inclusions" role="tab" data-toggle="tab">
+													<i class="fa fa-bed" aria-hidden="true"></i>
+												</a>
+											</li>
+										</ul>
+									</div>
+									<div class="tab-content">
+										<div role="tabpanel" class="tab-pane " id="tab1"></div>
+										<div class="cl"></div>
+										<div role="tabpanel" class="tab-pane" id="tab3"></div>
+										<div role="tabpanel" class="tab-pane active" id="tab2"></div>
+										<div role="tabpanel" class="tab-pane" id="tab6"></div>
+										<div role="tabpanel" class="tab-pane" id="tab5"></div>
+										<div role="tabpanel" class="tab-pane" id="tab4"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="main-title">
+								<h1 class="text-center wow zoomIn" data-wow-duration="3s">Hot Destinations this Week <sup><i class="fa fa-star" aria-hidden="true"></i> </sup></h1>
+							</div>
+						</div>
+					</div>
+					<section id="demos">
+						<div class="">
+							<div class="loop owl-carousel owl-theme owl-loaded owl-drag">
+								<div class="owl-stage-outer">
+									<div class="owl-stage" style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s; width: 3014px;">
+										{% for item in continent %}
+										<div class="owl-item active" style="width: 356.667px; margin-right: 20px;">
+											<div class="item wow zoomIn" data-wow-duration="3s">
+												<div class="hotdeals-box">
+													<div class="upper-caption"><h4>{{item.highest_point}}</h4></div>
+													<a href="https://www.tripee.in/tour-destination/gir-national-park">
+														<picture>
+															<source media="(min-width:980px)" srcset="/upload/{{item.images}}">
+															<source media="(min-width:400px)" srcset="/upload/{{item.images}}">
+															<img src="/upload/{{item.images}}" title="" alt="" border="0">
+														</picture>
+													</a>
+													<a href="https://www.tripee.in/tour-destination/gir-national-park">
+														<div class="carousel-caption"><span>{{item.continent_name}}</span></div>
+													</a>
+												</div>
+											</div>
+										</div>
+										{% endfor %}
+									</div>
+								</div>
+								<div class="owl-nav">
+									<button type="button" role="presentation" class="owl-prev disabled"><span aria-label="Previous">‹</span></button>
+									<button type="button" role="presentation" class="owl-next"><span aria-label="Next">›</span></button>
+								</div>
+								<div class="owl-dots">
+									<button role="button" class="owl-dot active"><span></span></button>
+									<button role="button" class="owl-dot"><span></span></button>
+									<button role="button" class="owl-dot"><span></span></button>
+								</div>
+							</div>
+						</div>
+					</section>
+				</div>
+			</section>
+			
+			<section class="proj-themes">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="title-main">
+								<h2 class=" wow zoomIn" data-wow-duration="3s"><strong>POPULAR</strong> <span>THEMES</span> </h2>
+							</div>
+						</div>
+					</div>
+					<div class="owl-carousel owl-theme destination_bg-slider-slides1 owl-loaded owl-drag">
+						<div class="owl-stage-outer">
+							<div class="owl-stage" style="transform: translate3d(-1140px, 0px, 0px); transition: all 0.25s ease 0s; width: 3648px;">
+								{% for item in continent %}
+								<div class="owl-item cloned" style="width: 198px; margin-right: 30px;">
+									<div class="item ">
+										<div class="theme-box">
+											<div class="th-1">
+												<a href="https://www.tripee.in/tour-destination/category/adventures">
+													<picture>
+														<source media="(min-width:980px)" srcset="public/upload/pack/2/images/large/image_1611149700.jpg">
+														<source media="(min-width:400px)" srcset="public/upload/pack/2/images/medium/image_1611149700.jpg">
+														<img src="./Tripee_files/image_1611149700.jpg" title="" alt="{{item.continent_name}}" border="0">
+													</picture>
+												</a>
+											</div>
+											<div class="theme-content">
+												<a href="https://www.tripee.in/tour-destination/category/adventures">
+													<div class="theme-title">{{item.continent_name}}</div>
+												</a>
+												<a href="https://www.tripee.in/tour-destination/category/adventures"> 
+													<span class="add-icon"><i class="fa fa-plus" aria-hidden="true"></i></span>
+												</a>
+											</div>
+										</div>
+									</div>
+								</div>
+								{% endfor %}
+							</div>
+						</div>
+						<div class="owl-nav">
+							<button type="button" role="presentation" class="owl-prev"><span aria-label="Previous">‹</span></button>
+							<button type="button" role="presentation" class="owl-next"><span aria-label="Next">›</span></button>
+						</div>
+						<div class="owl-dots">
+							<button role="button" class="owl-dot active"><span></span></button>
+							<button role="button" class="owl-dot"><span></span></button>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="best-places">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="title-main">
+								<h2><strong>Recommended <span>DOMESTIC</span> holiday packages </strong> </h2>
+							</div>
+						</div>
+					</div>
+					<div class="owl-carousel owl-theme destination_bg-slider-slides2 owl-loaded owl-drag">
+						<div class="owl-stage-outer">
+							<div class="owl-stage" style="transform: translate3d(-2850px, 0px, 0px); transition: all 0s ease 0s; width: 11400px;">
+								<div class="owl-item cloned" style="width: 255px; margin-right: 30px;">
+									<div class="item">
+										<div class="">
+											<div class="theme-box best-places-box themewhitebox">
+												<a href="https://www.tripee.in/detail/tour-package-for-jaipur/jaipur-city-tour-108-1-20162-1-0.html" class="">
+													<div class="bestplace-img">
+														<picture>
+															<source media="(min-width:980px)" srcset="https://www.tripee.in/public/upload/tours/108/large/108_1612348907_0.jpg">
+															<source media="(min-width:400px)" srcset="https://www.tripee.in/public/upload/tours/108/medium/108_1612348907_0.jpg">
+															<img src="./Tripee_files/108_1612348907_0.jpg" title="" alt="" border="0">
+														</picture>
+													</div>
+												</a>
+												<div class="theme-content">
+													<ul>
+														<li>
+															<div class="theme-title">
+																<a href="https://www.tripee.in/detail/tour-package-for-jaipur/jaipur-city-tour-108-1-20162-1-0.html" class="">Jaipur City Tour</a>
+															</div>
+														</li>
+													</ul>
+													<p>2 Nights 3 Days</p>
+													<p class="best-places-content"> <span class="blackcolor">Destinations:</span> Jaipur</p>
+													<ul class="rating-sec">
+														<li><span class="st-txt">Starting from</span><br><span class="st-price"><i class="fa fa-rupee"></i>3,630</span></li>
+														<li><a href="https://www.tripee.in/detail/tour-package-for-jaipur/jaipur-city-tour-108-1-20162-1-0.html" class="dt-view">VIEW MORE</a></li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="owl-item cloned" style="width: 255px; margin-right: 30px;">
+									<div class="item">
+										<div class="">
+											<div class="theme-box best-places-box themewhitebox">
+												<a href="https://www.tripee.in/detail/tour-package-for-coorg-bekal-mangalore/coorg-bekal-tour-115-1-20073-1-0.html" class="">
+													<div class="bestplace-img">
+														<picture>
+															<source media="(min-width:980px)" srcset="https://www.tripee.in/public/upload/tours/115/large/115_1610958741_0.png">
+															<source media="(min-width:400px)" srcset="https://www.tripee.in/public/upload/tours/115/medium/115_1610958741_0.png">
+															<img src="./Tripee_files/115_1610958741_0.png" title="" alt="" border="0">
+														</picture>
+													</div>
+												</a>
+												<div class="theme-content">
+													<ul>
+														<li>
+															<div class="theme-title">
+																<a href="https://www.tripee.in/detail/tour-package-for-coorg-bekal-mangalore/coorg-bekal-tour-115-1-20073-1-0.html" class="">
+																	Coorg - Bekal Tour
+																</a>
+															</div>
+														</li>
+													</ul>
+													<p>5 Nights 6 Days</p>
+													<p class="best-places-content"> <span class="blackcolor">Destinations:</span> Coorg,Bekal,Mangalore</p>
+													<ul class="rating-sec">
+														<li>
+															<a href="https://www.tripee.in/detail/tour-package-for-coorg-bekal-mangalore/coorg-bekal-tour-115-1-20073-1-0.html" class="dt-view">VIEW MORE</a>
+														</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="owl-nav">
+							<button type="button" role="presentation" class="owl-prev"><span aria-label="Previous">‹</span></button>
+							<button type="button" role="presentation" class="owl-next"><span aria-label="Next">›</span></button>
+						</div>
+						<div class="owl-dots">
+							<button role="button" class="owl-dot active"><span></span></button>
+							<button role="button" class="owl-dot"><span></span></button>
+							<button role="button" class="owl-dot"><span></span></button>
+							<button role="button" class="owl-dot"><span></span></button>
+							<button role="button" class="owl-dot"><span></span></button>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+		
+		<section class="best-places internationalplaces">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="title-main">
+							<h2>Recommended <span>INTERNATIONAL </span> holiday packages </h2>
+						</div>
+					</div>
+				</div>
+				<div class="owl-carousel owl-theme destination_bg-slider-slides2 owl-loaded owl-drag">
+					<div class="owl-stage-outer">
+						<div class="owl-stage" style="transform: translate3d(-1995px, 0px, 0px); transition: all 0s ease 0s; width: 7980px;">
+							<div class="owl-item cloned" style="width: 255px; margin-right: 30px;">
+								<div class="item">
+									<div class="">
+										<div class="theme-box best-places-box ">
+											<a href="https://www.tripee.in/detail/tour-package-for-kathmandu-pokhara/nepal-tour-140--22504--0.html" class="">
+												<div class="bestplace-img">
+													<picture>
+														<source media="(min-width:980px)" srcset="https://www.tripee.in/public/upload/tours/140/large/140_1611319539_0.jpg">
+														<source media="(min-width:400px)" srcset="https://www.tripee.in/public/upload/tours/140/medium/140_1611319539_0.jpg">
+														<img src="./Tripee_files/140_1611319539_0.jpg" title="" alt="" border="0">
+													</picture>
+												</div>
+											</a>
+											<div class="theme-content">
+												<ul>
+													<li>
+														<div class="theme-title">
+															<a href="https://www.tripee.in/detail/tour-package-for-kathmandu-pokhara/nepal-tour-140--22504--0.html" class="">
+																Nepal Tour
+															</a>
+														</div>
+													</li>
+												</ul>
+												<p>4 Nights 5 Days</p>
+												<p class="best-places-content"> <span class="blackcolor">Destinations:</span> Kathmandu,Pokhara</p>
+												<ul class="rating-sec">
+													<li><a href="https://www.tripee.in/detail/tour-package-for-kathmandu-pokhara/nepal-tour-140--22504--0.html" class="dt-view">VIEW MORE</a></li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="owl-item cloned" style="width: 255px; margin-right: 30px;">
+								<div class="item">
+									<div class="">
+										<div class="theme-box best-places-box ">
+											<a href="https://www.tripee.in/detail/tour-package-for-thimphu-paro/bhutan-tour-141--22525--0.html" class="">
+												<div class="bestplace-img">
+													<picture>
+														<source media="(min-width:980px)" srcset="https://www.tripee.in/public/upload/tours/141/large/141_1611381273_0.jpg">
+														<source media="(min-width:400px)" srcset="https://www.tripee.in/public/upload/tours/141/medium/141_1611381273_0.jpg">
+														<img src="./Tripee_files/141_1611381273_0.jpg" title="" alt="" border="0">
+													</picture>
+												</div>
+											</a>
+											<div class="theme-content">
+												<ul>
+													<li>
+														<div class="theme-title">
+															<a href="https://www.tripee.in/detail/tour-package-for-thimphu-paro/bhutan-tour-141--22525--0.html" class="">
+																Bhutan Tour
+															</a>
+														</div>
+													</li>
+												</ul>
+												<p>4 Nights 5 Days</p>
+												<p class="best-places-content"> <span class="blackcolor">Destinations:</span> Thimphu,Paro</p>
+												<ul class="rating-sec">
+													<li><a href="https://www.tripee.in/detail/tour-package-for-thimphu-paro/bhutan-tour-141--22525--0.html" class="dt-view">VIEW MORE</a></li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="owl-nav">
+						<button type="button" role="presentation" class="owl-prev"><span aria-label="Previous">‹</span></button>
+						<button type="button" role="presentation" class="owl-next"><span aria-label="Next">›</span></button>
+					</div>
+					<div class="owl-dots">
+						<button role="button" class="owl-dot active"><span></span></button>
+						<button role="button" class="owl-dot"><span></span></button>
+						<button role="button" class="owl-dot"><span></span></button>
+						<button role="button" class="owl-dot"><span></span></button>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		
+		<section class="visa-listing-cls proj-themes homevisabg">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="title-main">
+							<h2 class=""><strong>POPULAR</strong> <span>VISA</span> </h2>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-3 col-md-3 col-sm-6 col-12">
+						<div class="visa-box home-visabox">
+							<div class="visa-title1 text-center">Visa For</div>
+							<div class="visa-title2 text-center">United Arab Emirates</div>
+							<div class="visa-title3 text-center">90 Days Dubai Visit Vi...</div>
+							<div class="visa-price text-center">
+								<div class="row">
+									<div class="col-md-5 col-sm-6 col-6">
+										<span class="visa-pkg-price-box text-blue"><!--<i class="fa fa-rupee"></i>--> INR 18500/-</span>
+									</div>
+									<div class="col-md-7 col-sm-6 col-6">
+										<a href="https://www.tripee.in/visa/united-arab-emirates-visa/90-days-dubai-visit-visa.html" class="visa-apply_now visa-apply_right">Apply Now</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-3 col-sm-6 col-12">
+						<div class="visa-box home-visabox">
+							<div class="visa-title1 text-center">Visa For</div>
+							<div class="visa-title2 text-center">United Arab Emirates</div>
+							<div class="visa-title3 text-center">UAE 14 Days Visa</div>
+							<div class="visa-price text-center">
+								<div class="row">
+									<div class="col-md-5 col-sm-6 col-6">
+										<span class="visa-pkg-price-box text-blue"><!--<i class="fa fa-rupee"></i>--> INR 7200/-</span>
+									</div>
+									<div class="col-md-7 col-sm-6 col-6">
+										<a href="https://www.tripee.in/visa/united-arab-emirates-visa/uae-14-days-visa.html" class="visa-apply_now visa-apply_right">Apply Now</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+
+		<section class="testimonial">
+			<div class="container">
+				<section id="testimonial">
+					<div class="">
+						<div class="owl-carousel owl-theme testimonial-slider owl-loaded owl-drag">
+							<div class="owl-stage-outer">
+								<div class="owl-stage" style="transform: translate3d(-2240px, 0px, 0px); transition: all 0s ease 0s; width: 5600px;">
+									<div class="owl-item cloned" style="width: 1110px; margin-right: 10px;">
+										<div class="item wow zoomIn" data-wow-duration="3s">
+											<div class="testimonial-box">
+												<div class="client-img-box">
+													<img class="img-fluid client-img" src="./Tripee_files/feedback_0_1603277674.jpg" alt="" title="" border="0">
+												</div>
+												<div class="client-review-text">
+													<p class="text-white ">Enjoyed the tour through out. Well planned by TRIPEE staff. Thanks.</p>
+													<div class="clientname text-white ">Sudipta Banerjee</div>
+													<div class="client-sub text-white ">Amazing Service!</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="owl-item cloned" style="width: 1110px; margin-right: 10px;">
+										<div class="item wow zoomIn" data-wow-duration="3s">
+											<div class="testimonial-box">
+												<div class="client-img-box">
+													<img class="img-fluid client-img" src="./Tripee_files/feedback_0_1603277674.jpg" alt="" title="" border="0">
+												</div>
+												<div class="client-review-text">
+													<p class="text-white ">Enjoyed the tour through out. Well planned by TRIPEE staff. Thanks.</p>
+													<div class="clientname text-white ">Sudipta Banerjee</div>
+													<div class="client-sub text-white ">Amazing Service!</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="owl-nav disabled">
+								<button type="button" role="presentation" class="owl-prev"><span aria-label="Previous">‹</span></button>
+								<button type="button" role="presentation" class="owl-next"><span aria-label="Next">›</span></button>
+							</div>
+							<div class="owl-dots disabled">
+								<button role="button" class="owl-dot active"><span></span></button>
+							</div>
+						</div>
+					</div>
+				</section>
+				<a href="https://www.tripee.in/" class="readmoretxt" style="display: none;">Read More</a>
+			</div>
+		</section>
+
+
+		<footer class="">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-3 col-md-6 col-sm-12 col-12">
+						<div class="ft-1">
+							<div class="ft-title mb-2 ">Social Links</div>
+							<ul class="social-icons ">
+								<li><a target="_blank" title="Facebook" href="https://www.facebook.com/Tripee.in"><img src="./Tripee_files/facebook.png"></a></li>
+								<li><a target="_blank" title="Instagram" href="https://www.instagram.com/tripee.in"><img src="./Tripee_files/instagram.png"></a></li>
+								<li><a target="_blank" title="twitter" href="https://twitter.com/TripeeIndia"><img src="./Tripee_files/twitter.png"></a></li>
+								<li><a target="_blank" title="youtube" href="https://www.youtube.com/channel/UCxp0OocEOraU0mtlTPoC9Iw"><img src="./Tripee_files/youtube.png"></a></li>
+							</ul>
+							<div class="news-sec">
+								<form id="subscribe-form" autocomplete="off" method="post" class="newsletter clearfix ng-pristine ng-valid">
+									<input id="send_email" type="text" autocomplete="off" name="email" maxlength="25" class="news-field form-control1" placeholder="Enter Email">
+									<button type="submit" class="subscribeBtn news-btn search-btn">Subscribe</button>
+								</form>
+							</div>
+						</div>
+					</div>
+					<div class="offset-1 col-lg-3 col-md-6 col-sm-12 col-12">
+						<div class="ft-title mb-1 ">About Company</div>
+						<ul class="links pl-0">
+							<li class=""><a href="https://www.tripee.in/about-us">About Us</a></li>
+							<li class=""><a href="https://www.tripee.in/terms-of-use">Terms Of Use</a></li>
+							<li class=""><a href="https://www.tripee.in/privacy-policy">Privacy Policy</a></li>
+							<li class=""><a href="https://www.tripee.in/contact-us">Contact Us</a></li>
+							<li class=""><a href="https://www.tripee.in/activities">Activities</a></li>
+							<li class=""><a href="https://www.tripee.in/flight">Flight</a></li>
+							<li class=""><a href="https://www.tripee.in/visa">Visa</a></li>
+							<li class=""><a href="https://www.tripee.in/hotels">Hotels</a></li>
+							<li><a target="_blank" href="https://www.tripee.in/detail/index/view/id/aHR0cHM6Ly9nbG9iYWx0cmF2ZWxleGNoYW5nZS5jb20vZmVlZGJhY2tmb3JtLnBocD9BZ2VuY3lTeXNJZD01MDk5JmNvZGU9MjA2MTM4MGU1Zjg3OTI2YTE0NDQxMGRkYTIzZjk4OWYzOWE4ZmJmZjljMDBmMWQzZDRjZmJhMWYwOTkyNTc5Zg=="><span class="dotft"></span> Feedback</a></li>
+						</ul>
+					</div>
+					<div class="col-lg-3 col-md-6 col-sm-12 col-12">
+						<div class="ft-title mb-1 ">Tours by Category</div>
+						<ul class="links pl-0">
+							<li class=""><a href="https://www.tripee.in/tour-destination/category/heritage">Heritage</a></li>
+							<li class=""><a href="https://www.tripee.in/tour-destination/category/beach">Beach</a></li>
+							<li class=""><a href="https://www.tripee.in/tour-destination/category/wild-life">Wild Life</a></li>
+							<li class=""><a href="https://www.tripee.in/tour-destination/category/adventures">Adventures</a></li>
+							<li class=""><a href="https://www.tripee.in/tour-destination/category/honeymoon">Honeymoon</a></li>
+						</ul>
+					</div>
+					<div class="col-lg-2 col-md-6 col-sm-12 col-12 pr-0">
+						<div class="ft-title mb-2 ">Packages</div>
+						<ul class="links pl-0">
+							<li class=" "><a href="https://www.tripee.in/tour-destination/domestic-tour-packages.html"> Domestic Packages</a></li>
+							<li class=" "><a href="https://www.tripee.in/tour-destination/international-tour-packages.html"> International Packages</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-3 col-md-3 col-sm-6 col-12">
+						<div class="ft-title mt-5 mb-2">Destinations</div>
+						<ul class="patners-list d-flex flex-wrap">
+							<li class=" ">
+								<a href="https://www.tripee.in/tour-destination/jaisalmer">
+									<picture>
+										<source media="(min-width:980px)" srcset="https://www.tripee.in/public/upload/destinations/279/images/large/279_1616233042.jpg">
+										<source media="(min-width:400px)" srcset="https://www.tripee.in/public/upload/destinations/279/images/medium/279_1616233042.jpg">
+										<img src="./Tripee_files/279_1616233042.jpg" title="" alt="" border="0">
+									</picture>
+									<span>Jaisalmer</span>
+								</a>
+							</li>
+							<li class=" ">
+								<a href="https://www.tripee.in/tour-destination/coimbatore">
+									<picture>
+										<source media="(min-width:980px)" srcset="https://www.tripee.in/public/upload/destinations/314/images/large/314_1616149053.jpg">
+										<source media="(min-width:400px)" srcset="https://www.tripee.in/public/upload/destinations/314/images/medium/314_1616149053.jpg">
+										<img src="./Tripee_files/314_1616149053.jpg" title="" alt="" border="0">
+									</picture>
+									<span>Coimbatore</span>
+								</a>
+							</li>
+							<li class=" ">
+								<a href="https://www.tripee.in/tour-destination/alleppey">
+									<picture>
+										<source media="(min-width:980px)" srcset="https://www.tripee.in/public/upload/destinations/340/images/large/340_1611054055.jpg">
+										<source media="(min-width:400px)" srcset="https://www.tripee.in/public/upload/destinations/340/images/medium/340_1611054055.jpg">
+										<img src="./Tripee_files/340_1611054055.jpg" title="" alt="" border="0">
+									</picture>
+									<span>Alleppey</span>
+								</a>
+							</li>
+							<li class=" ">
+								<a href="https://www.tripee.in/tour-destination/ahmedabad">
+									<picture>
+										<source media="(min-width:980px)" srcset="https://www.tripee.in/public/upload/destinations/341/images/large/341_1611208031.png">
+										<source media="(min-width:400px)" srcset="https://www.tripee.in/public/upload/destinations/341/images/medium/341_1611208031.png">
+										<img src="./Tripee_files/341_1611208031.png" title="" alt="" border="0">
+									</picture>
+									<span>Ahmedabad</span>
+								</a>
+							</li>
+							<li class=" ">
+								<a href="https://www.tripee.in/tour-destination/trivandrum">
+									<picture>
+										<source media="(min-width:980px)" srcset="https://www.tripee.in/public/upload/destinations/185/images/large/185_1616234158.jpg">
+										<source media="(min-width:400px)" srcset="https://www.tripee.in/public/upload/destinations/185/images/medium/185_1616234158.jpg">
+										<img src="./Tripee_files/185_1616234158.jpg" title="" alt="" border="0">
+									</picture>
+									<span>Trivandrum</span>
+								</a>
+							</li>
+							<li class=" ">
+								<a href="https://www.tripee.in/tour-destination/goa">
+									<picture>
+										<source media="(min-width:980px)" srcset="https://www.tripee.in/public/upload/destinations/295/images/large/295_1616828561.png">
+										<source media="(min-width:400px)" srcset="https://www.tripee.in/public/upload/destinations/295/images/medium/295_1616828561.png">
+										<img src="./Tripee_files/295_1616828561.png" title="" alt="" border="0">
+									</picture>
+									<span>Goa</span>
+								</a>
+							</li>
+							<li class=" ">
+								<a href="https://www.tripee.in/tour-destination/hampi">
+									<picture>
+										<source media="(min-width:980px)" srcset="https://www.tripee.in/public/upload/destinations/290/images/large/290_1616828778.jpg">
+										<source media="(min-width:400px)" srcset="https://www.tripee.in/public/upload/destinations/290/images/medium/290_1616828778.jpg">
+										<img src="./Tripee_files/290_1616828778.jpg" title="" alt="" border="0">
+									</picture>
+									<span>Hampi</span>
+								</a>
+							</li>
+							<li class=" ">
+								<a href="https://www.tripee.in/tour-destination/jaipur">
+									<picture>
+										<source media="(min-width:980px)" srcset="https://www.tripee.in/public/upload/destinations/280/images/large/280_1608636736.jpg">
+										<source media="(min-width:400px)" srcset="https://www.tripee.in/public/upload/destinations/280/images/medium/280_1608636736.jpg">
+										<img src="./Tripee_files/280_1608636736.jpg" title="" alt="" border="0">
+									</picture>
+									<span>Jaipur</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div class="offset-1 col-lg-5 col-md-5 col-6 col-12">
+						<div class="ft-title mt-5 mb-2 ">Recent Travelogues</div>
+						<ul class="links pl-0">
+							<li style="float: inherit;"><a href="https://www.tripee.in/travelogue/24-best-places-to-visit-in-december-in-india">24 BEST PLACES TO VISIT IN DECEMBER IN INDIA</a></li>
+						</ul>
+					</div>
+					<div class="col-lg-3 col-md-3 col-sm-6 col-12">
+						<div class="ft-title mt-5 mb-2">Payment</div>
+						<ul class="patners-list ft-logo-bg d-flex flex-wrap">
+							<li class=" "><img src="./Tripee_files/visa-ft.png" title="" alt="" border="0"></li>
+							<li class=" "><img src="./Tripee_files/hdfc-ft.png" title="" alt="" border="0"></li>
+							<li class=" "><img src="./Tripee_files/american-ft.png" title="" alt="" border="0"></li>
+							<li class=" "><img src="./Tripee_files/jcb-ft.png" title="" alt="" border="0"></li>
+						</ul>
+					</div>
+				</div>
+				<a id="back-to-top" class=""><i class="fa fa-arrow-up" aria-hidden="true"></i></a>
+			</div>
+		</footer>
+
+		<div class="copyright">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-4 col-md-12 col-sm-12 col-12">
+						<small class="copyright-txt">© 2020 <strong>Tripee</strong>.All Rights Reserved.</small>
+					</div>
+					<div class="col-lg-4 col-md-12 col-sm-12 col-12">
+						<small class="copyright-txt cpy-moble" style="font-size:14px;">Powered by <a href="http://www.hellogtx.com/"><span style="color:#0b74c4;">hello</span><span style="color:#fb5a2d">GTX</span></a></small>
+					</div>
+					<div class="col-lg-4 col-md-12 col-sm-12 col-12 text-center">
+						<ul class="ft-btn-list">
+							<li> <a class="btn callIcon" href="tel:+919291907328"><i class="fa fa-phone" aria-hidden="true"></i> Call Us</a></li>
+							<li> <a class="btn enquiry-Icon" data-toggle="modal" data-target="#myModa1Enquiry"><i class="fa fa-file-text-o"></i> Send Enquiry</a></li>
+							<li><a class="btn wtsapp-icon " href="whatsapp://send?text=Hello&amp;phone=+919291907328"><i class="fa fa-whatsapp" aria-hidden="true"></i>Whatsapp</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

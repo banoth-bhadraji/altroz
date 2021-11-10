@@ -1,0 +1,187 @@
+{% load static %}  
+<html>
+	<head>
+		<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+		<script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+		<script src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap5.min.js"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css"/>
+		<link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap5.min.css"/>
+		<script src="{% static '/nobel/nobel.js' %}" type="text/javascript"></script>
+  		<link href="{% static '/nobel/nobel.css' %}" rel="stylesheet">  
+	</head>
+	<body>
+		<div id="divOutput">
+			<div class="row" id="divButtons">
+				<div class="col-sm-10"></div>
+				<div class="col-sm-2">
+					<input type="button" id="buttonAddNew" value="Add New" title="Add New">
+				</div>
+			</div>
+			<div id="divDataTable">
+				<table id="dataTableNobel" class="table table-striped">
+					<thead>
+						<tr>
+							<th>S.No</th>
+							<th>Name</th>
+							<th>Received On</th>
+							<th>Date Of Birth</th>
+							<th>Born Place</th>
+							<th>Residence</th>
+							<th>Motivation</th>
+							<th>Prize Share</th>
+							<th>Category</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>1</td>
+							<td>Syukuro Manabe</td>
+							<td>2021</td>
+							<td>21 September 1931</td>
+							<td>Shingu, Ehime Prefecture, Japan</td>
+							<td>Princeton University, Princeton, NJ, USA</td>
+							<td>for the physical modelling of Earth's climate, quantifying variability and reliably predicting global warming.</td>
+							<td>1/4</td>
+							<td>Physics </td>
+						</tr>
+						<tr>
+							<td>2</td>
+							<td>Klaus Hasselmann</td>
+							<td>2021</td>
+							<td>25 October 1931</td>
+							<td>Hamburg, Germany</td>
+							<td>Max Planck Institute for Meteorology, Hamburg, Germany</td>
+							<td>for the physical modelling of Earth's climate, quantifying variability and reliably predicting global warming.</td>
+							<td>1/4</td>
+							<td>Physics </td>
+						</tr>
+						<tr>
+							<td>3</td>
+							<td>Giorgio Parisi</td>
+							<td>2021</td>
+							<td>4 August 1948</td>
+							<td>Rome, Italy</td>
+							<td>Sapienza University of Rome, Rome, Italy</td>
+							<td>for the discovery of the interplay of disorder and fluctuations in physical systems from atomic to planetary scales</td>
+							<td>1/2</td>
+							<td>Physics </td>
+						</tr>
+						<tr>
+							<td>4</td>
+							<td>Benjamin List</td>
+							<td>2021</td>
+							<td>11 January 1968</td>
+							<td>Frankfurt, Germany</td>
+							<td>Max-Planck-Institut für Kohlenforschung, Mülheim an der Ruhr, Germany</td>
+							<td>for the development of asymmetric organocatalysis.</td>
+							<td>1/2</td>
+							<td>Chemistry</td>
+						</tr>
+						<tr>
+							<td>5</td>
+							<td>David W.C. MacMillan</td>
+							<td>2021</td>
+							<td>1968</td>
+							<td>Bellshill, United Kingdom</td>
+							<td>Princeton University, Princeton, NJ, USA</td>
+							<td>for the development of asymmetric organocatalysis.</td>
+							<td>1/2</td>
+							<td>Chemistry</td>
+						</tr>
+						<tr>
+							<td>6</td>
+							<td>David Julius</td>
+							<td>2021</td>
+							<td>4 November 1955</td>
+							<td>New York, NY, USA</td>
+							<td>University of California, San Francisco, CA, USA</td>
+							<td>for their discoveries of receptors for temperature and touch.</td>
+							<td>1/2</td>
+							<td>Physiology or Medicine</td>
+						</tr>
+						<tr>
+							<td>7</td>
+							<td>Ardem Patapoutian</td>
+							<td>2021</td>
+							<td>1967</td>
+							<td>Beirut, Lebanon</td>
+							<td>Howard Hughes Medical Institute, Scripps Research, La Jolla, CA, USA</td>
+							<td>for their discoveries of receptors for temperature and touch.</td>
+							<td>1/2</td>
+							<td>Physiology or Medicine</td>
+						</tr>
+						<tr>
+							<td>8</td>
+							<td>Abdulrazak Gurnah</td>
+							<td>2021</td>
+							<td>1948</td>
+							<td>Zanzibar</td>
+							<td>England</td>
+							<td>for his uncompromising and compassionate penetration of the effects of colonialism and the fate of the refugee in the gulf between cultures and continents.</td>
+							<td>1/1</td>
+							<td>Literature</td>
+						</tr>
+						<tr>
+							<td>9</td>
+							<td>Maria Ressa</td>
+							<td>2021</td>
+							<td>2 October 1963</td>
+							<td>Manila, Philippines</td>
+							<td>Manila, Philippines</td>
+							<td>for their efforts to safeguard freedom of expression, which is a precondition for democracy and lasting peace.</td>
+							<td>1/2</td>
+							<td>Peace </td>
+						</tr>
+						<tr>
+							<td>10</td>
+							<td>Dmitry Andreyevich Muratov</td>
+							<td>2021</td>
+							<td>1961</td>
+							<td>Kuybyshev (now Samara), USSR (now Russia)</td>
+							<td>Kuybyshev (now Samara), USSR (now Russia)</td>
+							<td>for their efforts to safeguard freedom of expression, which is a precondition for democracy and lasting peace.</td>
+							<td>1/2</td>
+							<td>Peace </td>
+						</tr>
+						<tr>
+							<td>11</td>
+							<td>David Card</td>
+							<td>2021</td>
+							<td>1956</td>
+							<td>Guelph, Canada</td>
+							<td>University of California, Berkeley, CA, USA</td>
+							<td>for his empirical contributions to labour economics.</td>
+							<td>1/2</td>
+							<td>Economic Sciences </td>
+						</tr>
+						<tr>
+							<td>12</td>
+							<td>Joshua D. Angrist</td>
+							<td>2021</td>
+							<td>1960</td>
+							<td>Columbus, OH, USA</td>
+							<td>Massachusetts Institute of Technology (MIT), Cambridge, MA, USA</td>
+							<td>for their methodological contributions to the analysis of causal relationships.</td>
+							<td>1/4</td>
+							<td>Economic Sciences </td>
+						</tr>
+						<tr>
+							<td>13</td>
+							<td>Guido W. Imbens</td>
+							<td>2021</td>
+							<td>3 September 1963</td>
+							<td>the Netherlands</td>
+							<td>Stanford University, Stanford, CA, USA</td>
+							<td>for their methodological contributions to the analysis of causal relationships.</td>
+							<td>1/4</td>
+							<td>Economic Sciences </td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="row">
+			
+		</div>		
+	</body>
+</html>
